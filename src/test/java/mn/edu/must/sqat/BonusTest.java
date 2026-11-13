@@ -73,4 +73,12 @@ class BonusTest {
 
         assertEquals(8, DataFlowTargets.bonus(attendance, 5));
     }
+
+    @Test
+    @DisplayName("B8: total attendance >= 5 but longest streak < 5")
+    void bonusSplitStreakDoesNotEarnExtraPoints() {
+        int[] attendance = {1, 1, 0, 1, 1, 1};
+
+        assertEquals(5, DataFlowTargets.bonus(attendance, 5));
+    }
 }
